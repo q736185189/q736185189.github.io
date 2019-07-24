@@ -279,6 +279,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/java-集合1Collection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/24/java-集合1Collection/" class="post-title-link" itemprop="url">java(集合1Collection) </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-24 17:05:18 / 修改时间：17:05:32" itemprop="dateCreated datePublished" datetime="2019-07-24T17:05:18+08:00">2019-07-24</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>java中的集合主分为两类Collection和map集合<br>Collection集合<br>Collection接口从父接口iterable接口iterator()方法<br>该方法返回一个迭代器，所以所有实现Collection 接口的实现类都要重写iterator方法<br>1)Collection基本操作<br>    boolean    add(E e) 把元素e添加到当前集合中<br>    boolean    addAll(Collection&lt;? extends E&gt; c) 把参数c集合中所有的元素都添加到当前集合中<br>    void    clear() 清空集合所有的元素<br>    boolean    contains(Object o) 判断当前集合中是否包含元素o<br>    boolean    isEmpty() 判断集合是否为空.<br>    Iterator<e><br>    iterator() 返回集合的迭代器<br>    boolean    remove(Object o) 从当前集合中删除第一个与o匹配的元素<br>    int    size() 返回集合中元素的数量<br>    Object[]<br>    toArray() 把集合转换为数组<br>2)Collection<br>    子接口有list接口和set接口<br>    1.<br>    -List集合<br>        特点:有序,可重复<br>            存储顺序与添加顺序 一样, 可以存储重复的数据<br>        List为每个元素指定了索引值,增加了针对索引值的操作:<br>            add( index, o)<br>            remove(index)<br>            get(index)<br>        在JDK8中增加了sort(Comparator)排序功能<br>    list集合实现类经常使用的有ArrayList，Vector，linkedlist：<br>    (1)Arrayslist<br>         底层是数组, 访问快,添加删除慢<br>                 初始化容量: 10<br>                 扩容:1.5倍<br>    (2)Vector<br>               底层是数组, 线程安全的,ArrayList不是线程安全的<br>               初始化容量:10<br>               扩容: 2倍<br>    (3)LinkedList<br>               底层是双向链表, 访问慢,添加/删除效率高<br>               增加了针对第一个/最后一个元素的操作<br>               模拟栈, 模拟队列<br>    应用选择<br>        如果存储可以重复的数据选择List集合<br>        如果以访问为主,选择ArrayLIst<br>        如果频繁的进行添加删除操作选择LinkedList<br>    注意：List集合在contains(o), remove(o)方法中,需要调用对象的equals()方法,如果存储自定义类型的元素需要重写equals()/hashCode()<br>    2.<br>    Set<br>        存储特点:无序不可重复<br>            存储顺序与添加顺序可能不一样, 不能存储重复的数据<br>        (1)HashSet<br>            底层是HashMap<br>            HashSet就是HashMap键的集合<br>        (2)TreeSet<br>            底层TreeMap<br>            TreeSet就是TreeMap键的集合<br>            实现了SortedSet接口,可以对集合中的元素自然排序,要求元素必须是可比较的<br>    1)    要么在构造方法中指定Comparator比较器<br>    2)    如果构造方法没有指定Comparator,要求元素的类实现Comparable接口<br>    应用场景<br>        如果存储不重复的数据选择Set<br>        如果不需要排序就使用HashSet<br>        如果需要排序就使用TreeSet<br>    注意：<br>        HashSet判断是否相同的元素需要调用equals()方法,如果存储自定义类型数据,需要重写equals()/hashCode()<br>        TreeSet判断是否相同的元素,是根据Comparator/Comparable的比较结果是否为0来判断的,如果比较结果为0就认为是相同的元素<br>    代码实例：<br>    <figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">package reviwe.Collection;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Iterator;</span><br><span class="line">import java.util.LinkedList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/24</span><br><span class="line"> */</span><br><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        List list = new ArrayList();</span><br><span class="line">        list.add(&quot;aa&quot;);</span><br><span class="line">        list.add(&quot;bb&quot;);</span><br><span class="line">        list.add(&quot;cc&quot;);</span><br><span class="line">        list.add(1, &quot;ff&quot;);</span><br><span class="line">        //判断list集合是否为空</span><br><span class="line">        System.out.println(list.isEmpty());</span><br><span class="line">        //返回list集合元素个数</span><br><span class="line">        System.out.println(list.size());</span><br><span class="line">        //判断list集合是否包含指定元素</span><br><span class="line">        System.out.println(list.contains(&quot;aa&quot;));</span><br><span class="line">        //返回指定元素的索引值</span><br><span class="line">        System.out.println(list.indexOf(&quot;cc&quot;));</span><br><span class="line">        //返回list集合指定索引值的元素</span><br><span class="line">        System.out.println(list.get(1));</span><br><span class="line">        //删除指定元素</span><br><span class="line">        list.remove(&quot;aa&quot;);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">        //删除指定索引值的元素</span><br><span class="line">        list.remove(0);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">        //list.iterator()方法返回一个迭代器对象，使用迭代器遍历集合</span><br><span class="line">        Iterator iterator = list.iterator();</span><br><span class="line">        while (iterator.hasNext())&#123;</span><br><span class="line">            System.out.println(iterator.next());</span><br><span class="line">        &#125;</span><br><span class="line">        //因为list集合带有索引值所以可以使用for循环遍历</span><br><span class="line">        for (int i = 0; i &lt;list.size() ; i++) &#123;</span><br><span class="line">            System.out.println(list.get(i));</span><br><span class="line">        &#125;</span><br><span class="line">        //迭代器在使用一次后失效需要重新赋值</span><br><span class="line">        iterator = list.iterator();</span><br><span class="line">        //使用迭代器删除list集合中全部指定元素，注意不能使用for循环删除，可能出现漏删的情况</span><br><span class="line">        while (iterator.hasNext())&#123;</span><br><span class="line">            if (&quot;ff&quot;.equals(iterator.next()))&#123;</span><br><span class="line">                iterator.remove();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        LinkedList&lt;String&gt; list1 = new LinkedList&lt;&gt;();</span><br><span class="line">        //可以使用addall方法将集合list的全部元素添加到list1中</span><br><span class="line">        list1.addAll(list);</span><br><span class="line">        System.out.println(list1);</span><br><span class="line">        //linkedlist增加了对第一个及最后一个的操作</span><br><span class="line">        list1.addFirst(&quot;qq&quot;);</span><br><span class="line">        System.out.println(list1);</span><br><span class="line">        list1.addLast(&quot;ww&quot;);</span><br><span class="line">        System.out.println(list1);</span><br><span class="line">        //可以使用linkedlist模拟栈和队列</span><br><span class="line">        //模拟压栈</span><br><span class="line">        list1.push(&quot;vv&quot;);</span><br><span class="line">        System.out.println(list1);</span><br><span class="line">        //模拟弹栈</span><br><span class="line">        list1.pop();</span><br><span class="line">        System.out.println(list1);</span><br><span class="line">        //模拟进队</span><br><span class="line">        list1.offer(&quot;zz&quot;);</span><br><span class="line">        System.out.println(list1);</span><br><span class="line">        //模拟出队</span><br><span class="line">        list1.poll();</span><br><span class="line">        System.out.println(list1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></e></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/14/java-反射/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -789,7 +939,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
