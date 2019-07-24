@@ -279,6 +279,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/java-构造方法与static关键字/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/24/java-构造方法与static关键字/" class="post-title-link" itemprop="url">java (构造方法与static关键字)</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-24 18:53:26 / 修改时间：19:02:59" itemprop="dateCreated datePublished" datetime="2019-07-24T18:53:26+08:00">2019-07-24</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>构造方法<br>   1)作用:<br>           在创建对象的同时,给对象的各个属性赋值(初始化)<br>     2)特点:<br>           构造方法名与类名相同<br>           构造方法没有返回值,也没有返回值类型<br>           定义了类之后 ,系统在生成一个默认无参构造方法(缺省构造器)<br>          当显示的定义了构造方法之后,系统默认的无参构造就不存在了<br>           在开发中,经常 使用无参构造方法创建对象, 可以把无参构造方法显示的定义出来,实现构造方法的重载<br>           注意构造方法只能在创建对象时, 由系统调用, 不能通过类名/对象名调用构造方法, 创建对象new运算符后面跟的实际上是构造方法</p>
+<p>2)static关键字,可以修饰成员变量, 修饰成员方法,修饰代码块,修饰静态内部类,实现静态导入<br>          1.静态变量<br>          1) 在类体中定义的变量称为成员变量<br>                  使用static修饰的成员变量称为静态变量<br>                  没有使用static修饰的成员变量称为实例变量<br>          2)静态变量特点:<br>                  (1)在类加载内存时就给静态变量分配存储空间,  一直到程序结束<br>                  (2)静态变量存储在方法区,  实例变量存储在堆区, 局部变量存储在栈区<br>                  (3)静态变量是整个类所有对象共有, 不属于某个具体对象, 一般通过类名直接访问<br>          3)在什么情况下会定义静态变量?<br>                  (1)当所有对象需要共享同一个数据时,可以把共享的数据定义为静态变量<br>                  (2)当所有对象的某个属性值都一样时,可以定义为静态变量<br>      2.静态方法<br>          1)在类体中定义的方法称为成员方法<br>              如果没有static修饰的成员方法称为实例方法<br>              使用static修饰的成员方法称为静态方法<br>          2)静态方法特点:<br>              在静态方法中,不能 直接使用非静态的成员, 不可以使用this关键字<br>              在实例方法中可以直接使用实例变量,也可直接使用静态成员<br>          3)应用场景:<br>              一般情况下,在设计工具类时把方法定义为静态的,可以直接通过类名调用方法, 使用比较方便<br>              如:<br>                  Arrays.sort()<br>                  Arrays.copyOf()<br>                  Arrays.toString()<br>      3.静态代码块<br>      static {<br>                System.out.println(“这是静态代码块, 在类加载内存时执行静态代码块, 经常在静态代码块中给静态变量初始化,  也可以在静态代码块中加载类依赖的外部资源, JDBC驱动的加载”);<br>            }<br>代码实例：<br>类的创建</p>
+<figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package reviwe.person;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/24</span><br><span class="line"> */</span><br><span class="line">public class Person &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private String gender;</span><br><span class="line">    private int age;</span><br><span class="line"></span><br><span class="line">    public Person() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Person(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Person(String gender, int age) &#123;</span><br><span class="line">        this.gender = gender;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Person(String name, String gender, int age) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.gender = gender;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>构造方法重载实例化对象</p>
+<figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package reviwe.person;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/24</span><br><span class="line"> */</span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Person person = new Person();//使用无参构造</span><br><span class="line">        Person person1 = new Person(44);</span><br><span class="line">        Person person2 = new Person(&quot;men&quot;, 44);</span><br><span class="line">        Person person3 = new Person(&quot;lihua&quot;, &quot;men&quot;, 44);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/java-接口/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1245,7 +1398,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

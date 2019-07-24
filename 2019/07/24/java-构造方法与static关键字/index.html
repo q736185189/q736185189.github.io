@@ -94,17 +94,17 @@
   };
 </script>
 
-  <meta name="description" content="1)接口的概念    接口是功能的封装，主要用来描述类具有怎样的功能的2)接口的定义    修饰符 interface 借口名{    功能使用方法定义，默认使用public abstact修饰    }3)接口的使用    修饰符 类名 implement 接口名{    类实现了接口，需要重写接口的抽象方法    }    说明    1)    接口可以简单的看作是功能的封装, 接口中功能使">
+  <meta name="description" content="构造方法   1)作用:           在创建对象的同时,给对象的各个属性赋值(初始化)     2)特点:           构造方法名与类名相同           构造方法没有返回值,也没有返回值类型           定义了类之后 ,系统在生成一个默认无参构造方法(缺省构造器)          当显示的定义了构造方法之后,系统默认的无参构造就不存在了           在开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java(接口)">
-<meta property="og:url" content="http://yoursite.com/2019/07/24/java-接口/index.html">
+<meta property="og:title" content="java (构造方法与static关键字)">
+<meta property="og:url" content="http://yoursite.com/2019/07/24/java-构造方法与static关键字/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1)接口的概念    接口是功能的封装，主要用来描述类具有怎样的功能的2)接口的定义    修饰符 interface 借口名{    功能使用方法定义，默认使用public abstact修饰    }3)接口的使用    修饰符 类名 implement 接口名{    类实现了接口，需要重写接口的抽象方法    }    说明    1)    接口可以简单的看作是功能的封装, 接口中功能使">
+<meta property="og:description" content="构造方法   1)作用:           在创建对象的同时,给对象的各个属性赋值(初始化)     2)特点:           构造方法名与类名相同           构造方法没有返回值,也没有返回值类型           定义了类之后 ,系统在生成一个默认无参构造方法(缺省构造器)          当显示的定义了构造方法之后,系统默认的无参构造就不存在了           在开发">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-24T10:50:09.462Z">
+<meta property="og:updated_time" content="2019-07-24T11:02:59.917Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java(接口)">
-<meta name="twitter:description" content="1)接口的概念    接口是功能的封装，主要用来描述类具有怎样的功能的2)接口的定义    修饰符 interface 借口名{    功能使用方法定义，默认使用public abstact修饰    }3)接口的使用    修饰符 类名 implement 接口名{    类实现了接口，需要重写接口的抽象方法    }    说明    1)    接口可以简单的看作是功能的封装, 接口中功能使">
+<meta name="twitter:title" content="java (构造方法与static关键字)">
+<meta name="twitter:description" content="构造方法   1)作用:           在创建对象的同时,给对象的各个属性赋值(初始化)     2)特点:           构造方法名与类名相同           构造方法没有返回值,也没有返回值类型           定义了类之后 ,系统在生成一个默认无参构造方法(缺省构造器)          当显示的定义了构造方法之后,系统默认的无参构造就不存在了           在开发">
 
 
 
@@ -112,7 +112,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/24/java-接口/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/24/java-构造方法与static关键字/">
 
 
 
@@ -123,7 +123,7 @@
 </script>
 
   
-  <title>java(接口) | Hexo</title>
+  <title>java (构造方法与static关键字) | Hexo</title>
   
 
 
@@ -282,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/java-接口/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/java-构造方法与static关键字/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -299,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java(接口)
+          <h1 class="post-title" itemprop="name headline">java (构造方法与static关键字)
 
               
             
@@ -325,7 +325,7 @@
                 
               
 
-              <time title="创建时间：2019-07-24 18:26:56 / 修改时间：18:50:09" itemprop="dateCreated datePublished" datetime="2019-07-24T18:26:56+08:00">2019-07-24</time>
+              <time title="创建时间：2019-07-24 18:53:26 / 修改时间：19:02:59" itemprop="dateCreated datePublished" datetime="2019-07-24T18:53:26+08:00">2019-07-24</time>
             </span>
           
 
@@ -369,14 +369,11 @@
       
 
       
-        <p>1)接口的概念<br>    接口是功能的封装，主要用来描述类具有怎样的功能的<br>2)接口的定义<br>    修饰符 interface 借口名{<br>    功能使用方法定义，默认使用public abstact修饰<br>    }<br>3)接口的使用<br>    修饰符 类名 implement 接口名{<br>    类实现了接口，需要重写接口的抽象方法<br>    }<br>    说明<br>    1)    接口可以简单的看作是功能的封装, 接口中功能使用方法表示,接口中的方法默认public abstract修饰<br>    2)    类实现了接口需要重写接口中的抽象方法,如果没有重写所有抽象方法,则类也需要定义为抽象类<br>    3)    接口是一种引用数据类型,但是接口不能实例化对象,接口引用可以赋值实现类对象或者赋值匿名内部类对象,<br>    4)    通过接口引用调用抽象方法时实际执行的是实现类对象的方法,称为接口多态<br>    5)    在JDK8中,接口包含四部分内容: 默认的抽象方法, 字段默认使用public static final修饰为常量 ,可以添加static静态方法, default修饰的方法<br>    6)    接口允许继承,并且允许多继承<br>    7)    一个类可以同时实现多个接口 ,需要重写所有接口中的抽象方法<br>4)接口的应用:<br>      1)    接口用来封装某个功能, 如Flyable接口封装了飞行功能<br>      2)    接口定义一组操作规范,一个协议, 如把对集合的一组操作封装了Collection接口中<br>      3)    接口在某种程度上可以解决类的多继承<br>5)面向接口的编程<br>      1)    接口比较灵活,一个类在继承父类的同时可以实现多个接口<br>      2)    体现面向抽象编程的思想,提高程序的可扩展性,降低类的耦合度<br>      3)    通过接口可以使项目分层.<br>代码实例：<br>声明接口</p>
-<figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package reviwe.Myinter;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 声明一个接口完成比较两个数</span><br><span class="line"> *</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/24</span><br><span class="line"> */</span><br><span class="line">public interface Myinterface &#123;</span><br><span class="line">    int compare(int a,int b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>实现接口</p>
-<figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package reviwe.Myinter;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 实现接口</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/24</span><br><span class="line"> */</span><br><span class="line">public class Test implements Myinterface &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(int a, int b) &#123;</span><br><span class="line">        return a&gt;=b?a:b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>使用接口功能</p>
-<figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package reviwe.Myinter;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/24</span><br><span class="line"> */</span><br><span class="line">public class Test1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Test test = new Test();</span><br><span class="line">        int a =  11,b =22;</span><br><span class="line">        int compare = test.compare(a, b);</span><br><span class="line">        System.out.println(compare);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
+        <p>构造方法<br>   1)作用:<br>           在创建对象的同时,给对象的各个属性赋值(初始化)<br>     2)特点:<br>           构造方法名与类名相同<br>           构造方法没有返回值,也没有返回值类型<br>           定义了类之后 ,系统在生成一个默认无参构造方法(缺省构造器)<br>          当显示的定义了构造方法之后,系统默认的无参构造就不存在了<br>           在开发中,经常 使用无参构造方法创建对象, 可以把无参构造方法显示的定义出来,实现构造方法的重载<br>           注意构造方法只能在创建对象时, 由系统调用, 不能通过类名/对象名调用构造方法, 创建对象new运算符后面跟的实际上是构造方法</p>
+<p>2)static关键字,可以修饰成员变量, 修饰成员方法,修饰代码块,修饰静态内部类,实现静态导入<br>          1.静态变量<br>          1) 在类体中定义的变量称为成员变量<br>                  使用static修饰的成员变量称为静态变量<br>                  没有使用static修饰的成员变量称为实例变量<br>          2)静态变量特点:<br>                  (1)在类加载内存时就给静态变量分配存储空间,  一直到程序结束<br>                  (2)静态变量存储在方法区,  实例变量存储在堆区, 局部变量存储在栈区<br>                  (3)静态变量是整个类所有对象共有, 不属于某个具体对象, 一般通过类名直接访问<br>          3)在什么情况下会定义静态变量?<br>                  (1)当所有对象需要共享同一个数据时,可以把共享的数据定义为静态变量<br>                  (2)当所有对象的某个属性值都一样时,可以定义为静态变量<br>      2.静态方法<br>          1)在类体中定义的方法称为成员方法<br>              如果没有static修饰的成员方法称为实例方法<br>              使用static修饰的成员方法称为静态方法<br>          2)静态方法特点:<br>              在静态方法中,不能 直接使用非静态的成员, 不可以使用this关键字<br>              在实例方法中可以直接使用实例变量,也可直接使用静态成员<br>          3)应用场景:<br>              一般情况下,在设计工具类时把方法定义为静态的,可以直接通过类名调用方法, 使用比较方便<br>              如:<br>                  Arrays.sort()<br>                  Arrays.copyOf()<br>                  Arrays.toString()<br>      3.静态代码块<br>      static {<br>                System.out.println(“这是静态代码块, 在类加载内存时执行静态代码块, 经常在静态代码块中给静态变量初始化,  也可以在静态代码块中加载类依赖的外部资源, JDBC驱动的加载”);<br>            }<br>代码实例：<br>类的创建</p>
+<figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package reviwe.person;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/24</span><br><span class="line"> */</span><br><span class="line">public class Person &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private String gender;</span><br><span class="line">    private int age;</span><br><span class="line"></span><br><span class="line">    public Person() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Person(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Person(String gender, int age) &#123;</span><br><span class="line">        this.gender = gender;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Person(String name, String gender, int age) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.gender = gender;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>构造方法重载实例化对象</p>
+<figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package reviwe.person;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/24</span><br><span class="line"> */</span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Person person = new Person();//使用无参构造</span><br><span class="line">        Person person1 = new Person(44);</span><br><span class="line">        Person person2 = new Person(&quot;men&quot;, 44);</span><br><span class="line">        Person person3 = new Person(&quot;lihua&quot;, &quot;men&quot;, 44);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -410,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/24/java-集合-2-map/" rel="next" title="java (集合 2 map)">
-                <i class="fa fa-chevron-left"></i> java (集合 2 map)
+              <a href="/2019/07/24/java-接口/" rel="next" title="java(接口)">
+                <i class="fa fa-chevron-left"></i> java(接口)
               </a>
             
           </div>
@@ -419,10 +416,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/24/java-构造方法与static关键字/" rel="prev" title="java (构造方法与static关键字)">
-                java (构造方法与static关键字) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
