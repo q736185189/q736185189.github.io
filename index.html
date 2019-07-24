@@ -279,6 +279,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/java-集合-2-map/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/24/java-集合-2-map/" class="post-title-link" itemprop="url">java (集合 2 map)</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-24 17:08:42 / 修改时间：18:23:51" itemprop="dateCreated datePublished" datetime="2019-07-24T17:08:42+08:00">2019-07-24</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Map<br>    Map集合是按&lt;键,值&gt;对的形式存储数据<br>1)map集合的常用方法<br>    void    clear() 清空集合中所有的键值对.<br>    boolean    containsKey(Object key) 判断当前map中的键是否包含指定的key<br>    boolean    containsValue(Object value) 判断当前map中的值是否包含指定的value<br>    Set&lt;Map.Entry&lt;K,V&gt;&gt;    entrySet() 返回所有Entry的集合.<br>    V   get(Object key) 返回键key对应的值<br>    Set<k>  keySet() 返回所有键的集合<br>    V   put(K key, V value) 向map中添加&lt;key,value&gt;键值对<br>    void    putAll(Map&lt;? extends K,? extends V&gt; m)<br>    V   remove(Object key) 从map中删除key匹配的键值对<br>    default boolean    remove(Object key, Object value)<br>    default V   replace(K key, V value) 在map中把key的值替换为value<br>    int    size() 返回键值对的数量<br>    Collection<v>   values() 返回所有值的集合<br>2)Map集合常用实现类<br>    主要有HashMap，Heshable，TreeMap<br>    1.HashMap:<br>    底层实现是哈希表，哈希表是一个数组，数组每个元素都是单向链表<br>    工作原理<br>    首先根据键的哈希码经过哈希函数计算哈希值<br>    然后根据哈希值计算对应数组下标<br>    最后访问对应数组下表的链表<br>    HashMap是如何解决哈希冲突(碰撞)?<br>        采用链表法.<br>        哈希冲突是指不同的键计算出数组的下标相同<br>            不同键的哈希码可能相同;<br>            不同的哈希码经过hash函数计算的hash值可能相同<br>            不同的hash值计算出的数组下标可能相同<br>    JDK8对HashMap做了哪些改进?<br>    1)    把新增的结点插入到链表的尾部. 在JDK7之前新增的结点插入到链表的头部<br>    2)    当单向链表中结点的数量超过8个时, 系统会自动的把单向链表转换为红黑树结构<br>    2.hashable<br>        HashMap与HashTable的区别<br>        1)    底层都是哈希表, HashTable是线程安全的, HashMap不是线程安全的<br>        2)    HashMap的初始化容量: 16,  HashTable的初始化容量:11<br>        3)    加载因子: 0.75,  当键值对数量 大于  加载因子*容量,扩容<br>        4)    HashMap扩容:2倍,  HashTable扩容:2倍 + 1<br>        5)    HashMap的键与值都可以是null,  HashTable的键值都不能为null<br>        6)    在创建集合时可以指定初始化容量,  HashMap会自动的调整为2的幂次方, 为了快速计算数组的下标; HashTable不调整<br>    3.Treemap<br>        TreeMap实现了SortedMap接口,可以根据键自然排序,要求键必须是可比较的<br>        1)    在构造方法中指定Comparator比较器<br>        2)    如果构造方法中没有Comparator比较器,要求键实现Comparable接口<br>3)小结<br>    1.HashMap<br>        底层是哈希表<br>        默认初始化容量: 16<br>        加载因子: 0.75<br>        扩容: 2倍<br>        键与值都可以为null<br>        可以指定初始化容量, 系统会自动的调整为2的幂次方<br>    2.HashTable<br>        底层是哈希表, 它是 线程安全的, HashMap不是线程安全的<br>        默认初始化容量: 11<br>        加载因子: 0.75<br>        扩容: 2 倍 + 1<br>        键值都不能为null<br>        可以指定初始化容量, 不调整<br>    3.Properties<br>            键值都 是String<br>            经常用于设置/读取系统属性<br>            setProperty(属性名, 属性值)<br>            getProperty(属性名)<br>    4.TreeMap<br>        实现了SortedMap接口, 可以根据键自然排序, 要求键必须是可比较的<br>    1)    在构造方法中指定Comparator<br>    2)    如果构造方法没有Comparator,要求键实现Comparable接口<br>    TreeMap的键排序是根据红黑树原理排序<br>    注意集合只能存储引用类型，存基本类型是存对应包装类<br>    代码实例：<br>    <figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">package reviwe.map;</span><br><span class="line"></span><br><span class="line">import java.util.Collection;</span><br><span class="line">import java.util.HashMap;</span><br><span class="line">import java.util.Map;</span><br><span class="line">import java.util.Set;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/24</span><br><span class="line"> */</span><br><span class="line">public class MyMap &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Map&lt;String,Integer&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">        //使用put方法增加键值对</span><br><span class="line">        map.put(&quot;aa&quot;, 1);</span><br><span class="line">        map.put(&quot;bb&quot;, 1);</span><br><span class="line">        map.put(&quot;cc&quot;, 1);</span><br><span class="line">        map.put(&quot;dd&quot;, 1);</span><br><span class="line">        map.put(&quot;ee&quot;, 1);</span><br><span class="line">        //判断集合是否为空</span><br><span class="line">        System.out.println(map.isEmpty());</span><br><span class="line">        //返回集合元素个数</span><br><span class="line">        System.out.println(map.size());</span><br><span class="line">        //判断是否存在指定键</span><br><span class="line">        System.out.println(map.containsKey(&quot;aa&quot;));</span><br><span class="line">        //判断是否存在指定值</span><br><span class="line">        System.out.println(map.containsValue(1));</span><br><span class="line">        //返回指定键的值</span><br><span class="line">        map.get(&quot;aa&quot;);</span><br><span class="line">        //返回键的集合</span><br><span class="line">        Set&lt;String&gt; strings = map.keySet();</span><br><span class="line">        System.out.println(strings);</span><br><span class="line">        //返回值的集合</span><br><span class="line">        Collection&lt;Integer&gt; values = map.values();</span><br><span class="line">        System.out.println(values);</span><br><span class="line">        //返回键值对的集合</span><br><span class="line">        Set&lt;Map.Entry&lt;String, Integer&gt;&gt; entries = map.entrySet();</span><br><span class="line">        for (Map.Entry&lt;String ,Integer&gt; e:entries</span><br><span class="line">             ) &#123;</span><br><span class="line">            System.out.println(e.getKey()+&quot;:&quot;+e.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">        //替换值</span><br><span class="line">        map.replace(&quot;aa&quot;, 211);</span><br><span class="line">        //删除指定键</span><br><span class="line">        map.remove(&quot;aa&quot;);</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></v></k></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/java-集合1Collection/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -939,7 +1089,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
