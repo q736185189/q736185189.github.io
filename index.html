@@ -279,6 +279,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/25/java-面向对象特征/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/25/java-面向对象特征/" class="post-title-link" itemprop="url">java(面向对象特征)</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-25 20:19:36 / 修改时间：21:00:06" itemprop="dateCreated datePublished" datetime="2019-07-25T20:19:36+08:00">2019-07-25</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1)向对象的特征是封装，继承，多态<br>封装设计是为了防止直接访问更改字段造成程序错误<br>封装屏蔽了程序内部实现细节，提高数据的安全性,简化操作<br>继承是使用已有类派生出子类<br>继承可以实现代码的复用<br>多态是使用相同的代码实现不同操作<br>多态可以提高代码的可扩展性<br>2)封装<br>    1.访问权限<br>    (1)类的访问权限<br>        类访问权限有两个: 公共类与非公共类<br>        使用public修饰的类就是公共类,可以在其他包中使用,类名与源文件名相同<br>        没有public修饰的类就是非公共类, 只能在当前包中使用<br>    (2)类成员的访问权限<br>         公共的(public)可以在任何位置使用<br>         受保护的(protected)在当前类与子类中使用<br>         默认的可以在当前包中使用<br>         私有的(private)只可以在当前类中使用<br>    注意 权限的使用遵循最小权限原则<br>    2.封装就是使用private把字段修饰为私有的，提供getter/setter实现对字段的访问, 必要时在setter方法中对数据进行验证<br> 代码实例：<br>    <figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package lkreviwe;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 父类</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/25</span><br><span class="line"> */</span><br><span class="line">public class Father &#123;</span><br><span class="line">    //将字段设为私有的进行封装</span><br><span class="line">    private int a;</span><br><span class="line">    private int b;</span><br><span class="line">    int c;</span><br><span class="line">    public void show()&#123;</span><br><span class="line">        System.out.println(&quot;qwer&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>3)继承<br>    继承就是使用父类派生子类<br>    继承需要满足is a关系<br>    1.    子类  extends  父类,子类继承了父类就自动拥有了父类的实例变量与实例方法<br>    2.    静态成员没有继承问题<br>    3.    构造方法不能被继承, 子类创建对象调用子类构造方法, 在子类构造方法体执行前会先调用父类的构造方法, 默认情况下调用父类的无参构造, 如果父类没有无参构造系统报错,  在子类构造方法体中也可以通过super()显示调用父类的构造方法<br>    4.    子类从父类继承的方法如果不能满足子类需求,在子类 中可以重写该方法, 在子类的类体中通过super调用父类的方法<br>    5.super关键字的作用<br>                (1)在子类构造方法中通过super()显示调用父类的构造方法<br>                (2)在子类的类体中通过super表示该成员是从父类继承来的<br>    注意:<br>        super跟父类对象没有关系<br>        super()调用父类构造方法的语句必须作为第一条语句存在, super()与this()不能共存</p>
+<figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package lkreviwe;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 子类继承了父类</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/25</span><br><span class="line"> */</span><br><span class="line">public class Son extends Father &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Son son = new Son();</span><br><span class="line">        son.c= 1111;//子类继承了父类的字段</span><br><span class="line">        son.show();//子类继承了父类的方法</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>4)多态<br>    多态分为对象多态与行为多态<br>        对象多态是指同一个对象具有不同的状态,是通过对象的转型实现的<br>        行为多态就是相同的语句执行不同的操作,或者调用相同的方法执行不同的方法体.<br>        行为多态又分为静态多态与动态多态.<br>        静态多态是通过方法重载实现的,在调用某个方法时,传递不同的参数执行不同的方法体,在编译(javac)阶段就可以确定要执行的代码,又称为编译时多态<br>        动态多态是在程序运行到这一行时才能确定要执行哪个对象的方法,又称为动态绑定,动态时多态<br>        如果不特殊说明,平时所说的多态就是运行时多态<br>    运行时多态实现有四个条件:<br>    1.    子类继承父类<br>    2.    子类重写父类的方法<br>    3.    给父类的引用赋值子类对象(对象向上转型)<br>    4.    通过父类引用调用被重写方法时,实际执行的是子类 对象的方法<br>    对象向下转型<br>        当父类引用指向子类对象时, 不能通过父类引用访问子类特有的属性与方法<br>        如果需要访问子类特有的成员时需要对象向下转型<br>        对象向下转型通过强制类型转换实现<br>        一般情况下在对象向下转型前会使用instanceof运算符判断堆中对象是否为目标类型<br>    5.多态的作用:<br>    (1)    体现了面向抽象编程的思想<br>    (2)    降低了程序的耦合度<br>    (3)    提高了程序的可扩展性<br>代码示例：</p>
+<figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">package lkreviwe;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 多态</span><br><span class="line"> * 子类继承了父类</span><br><span class="line"> * 重写父类方法</span><br><span class="line"> * writer yw</span><br><span class="line"> * 2019/7/25</span><br><span class="line"> */</span><br><span class="line">public class Son extends Father &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void show() &#123;</span><br><span class="line">        System.out.println(&quot;子类&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //声明父类变量赋值子类对象</span><br><span class="line">        Father father = new Son();</span><br><span class="line">        //调用方法使用的是子类方法</span><br><span class="line">        father.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/java-构造方法与static关键字/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1398,7 +1553,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
